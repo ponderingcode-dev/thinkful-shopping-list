@@ -1,39 +1,23 @@
 $(document).ready(function(){
 
-// use enter to add list items
 	$('#item').keyup(function(event){
 		if(event.keyCode == 13) {
 			event.preventDefault();
-			$('#add').click();
+			$('#btnAddItem').click();
 		};
 	});	
 
-//add list items
-	$('#add').click(function(){
-		var txtbox = document.getElementById('item');
-		var txtval = txtbox.value;
-		event.preventDefault();
-
+	$('#btnAddItem').click(function(){
+		var itemName = $('#item').val();
 		if(!$.trim($('#item').val())) {
 			alert('Please enter text to add to the list');
 		} else {
-			$('<li class="items"></li>').appendTo('#list').html('<div class="box"></div><span>' + txtval + '</span> <i class="fa fa-trash delete" aria-hidden="true"></i>');
-
-		document.getElementById('item').value = '';
+			$('#items').append('<li><i class="fa fa-square-o" aria-hidden="true"></i>&nbsp;&nbsp;&nbsp;&nbsp;' + itemName + '&nbsp;&nbsp;<i class="fa fa-trash-o delete" aria-hidden="true"></i></li>');
 		};
+        $('#item').val("");
 	});
-
-//delete list items
-	$('#list').on('click', '.delete', function(e){e.preventDefault(); $(this).parent().remove()});
-
-//cross off list items
-	$('#list').on('click', 'li', function(){$(this).toggleClass('strike'); $(this).children('.box').toggleClass('Checked');});
-
-//sortable list items
-	$('#list').sortable({ axis: "y" });
 	
-//show delete button on mouse hover
-	$('#list').on('mouseenter', 'li', function(){$(this).children('.delete').toggleClass('show');});
-	$('#list').on('mouseleave', 'li', function(){$(this).children('.delete').toggleClass('show');});
-
+    $('#items').on('click', '.delete', function(){$(this).parent().remove()});
+	$('#items').on('click', '.fa-square-o', function(){$(this).removeClass('fa-square-o'); $(this).addClass('fa-check-square-o')});
+	$('#items').on('click', '.fa-check-square-o', function(){$(this).removeClass('fa-check-square-o'); $(this).addClass('fa-square-o')});
 });

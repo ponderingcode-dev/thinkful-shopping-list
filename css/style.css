@@ -1,0 +1,16 @@
+* {
+    font-family: 'Share Tech Mono';
+}
+
+ul {
+    list-style-type: none;
+}
+
+.parentContainer {
+    width: 100%;
+}
+
+.childContainer {
+    width: 20%;
+    margin: 0 auto;
+}

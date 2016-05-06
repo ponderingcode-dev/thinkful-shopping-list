@@ -1,25 +1,25 @@
 <!doctype html>
 <html lang="en">
-<head>
-	<meta charset="UTF-8">
-	<title>Shopping List</title>
-    <link href='https://fonts.googleapis.com/css?family=Share+Tech+Mono' rel='stylesheet' type='text/css'>
-    <!--
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.1/css/font-awesome.min.css">
-	<link rel="stylesheet" href="css/normalize.css">
-    -->
-	<link rel="stylesheet" href="css/main.css">
-</head>
-<body>
-	<div class="main">
-        <h1>shopping list</h1>
-        <input id="item">
-        <button type="submit" id="add">+</button><br>
-        <h2>Drag items to sort list</h2>
-        <ul id="list">
-        </ul>
-    </div>
-	<script src="http://code.jquery.com/jquery.min.js"></script>
-	<script src="js/app.js"></script>
-</body>
+    <head>
+        <meta charset="UTF-8">
+        <title>Shopping List</title>
+        <link href='https://fonts.googleapis.com/css?family=Share+Tech+Mono' rel='stylesheet' type='text/css'>
+        <link rel="stylesheet" href="font-awesome-4.6.2/css/font-awesome.min.css">
+        <link rel="stylesheet" href="css/style.css">
+    </head>
+    <body>
+        <div class="parentContainer">
+            <div class="childContainer">
+                <h2>Shopping List</h2>
+                    <input id="item" type="text" value="" placeholder="new item" size="32">
+                    <button id="btnAddItem"><i class="fa fa-plus" style="font-size: 12px; padding-top: 4px;" aria-hidden="true"></i></button>
+                    <div>
+                        <ul id="items">
+                        </ul>
+                    </div>
+            </div>
+        </div>
+        <script src="http://code.jquery.com/jquery.min.js"></script>
+        <script src="js/app.js"></script>
+    </body>
 </html>
